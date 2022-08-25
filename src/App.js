@@ -16,7 +16,7 @@ export default function App() {
   const [utente, setUtente] = useState("");
   useEffect(()=>{ setUtente(utenteattivo.mostrautete())
      console.log("funziona ?")},[utenteattivo.mostrautete()])
-
+  useEffect(()=>{ racoglilista()},)
   if (utente===""){
       return (
         <div className="App">
@@ -33,7 +33,7 @@ export default function App() {
             placeholder="password"
           />
           
-          <button onClick={()=>{gestioneacesso(nome,password); setTimeout(setUtente(utenteattivo.mostrautete()),5000);setNome("");setPassword("");setTimeout(racoglilista(),5000)}}>Login</button>
+          <button onClick={()=>{gestioneacesso(nome,password); setTimeout(setUtente(utenteattivo.mostrautete()),1000);setNome("");setPassword("");setTimeout(racoglilista(),1000)}}>Login</button>
           <button onClick={()=>creautente(nome,password)}>singup</button>
         </div>
       )
@@ -49,11 +49,11 @@ export default function App() {
           onChange={(event) => setEvento(event.target.value)}
           value={evento}
         />
-        <button onClick={()=>{racoglilista()}}>agiorna</button>
-        <button onClick={()=>{creaeventi(evento);setTimeout(racoglilista(),5000)}}> crea</button>
-        <button onClick={()=>{eliminaeventi(evento);setTimeout(racoglilista(),5000)}}> elimina</button>
-        { lista.mostralista().map( ev=><div> <h1>{ev.nome}  {interuttore(ev.completato)}</h1>  <button onClick={()=>{toggle(ev.nome);setTimeout(racoglilista(),5000)}}>completato</button>   </div>) }
-
+        
+        <button onClick={()=>{creaeventi(evento);setTimeout(racoglilista(),1000)}}> crea</button>
+        <button onClick={()=>{eliminaeventi(evento);setTimeout(racoglilista(),1000)}}> elimina</button>
+        { lista.mostralista().map( ev=><div className="linea"> <h1>{ev.nome}  {interuttore(ev.completato)}</h1>  <button onClick={()=>{toggle(ev.nome);setTimeout(racoglilista(),1000)}}>cambia</button>   </div>) }
+        
 
       </div>
     )

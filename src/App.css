@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.linea {
+  display : flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -37,6 +45,3 @@
   }
 }
 
-.pagina{
-  display: none;
-}
